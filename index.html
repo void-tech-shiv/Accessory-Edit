@@ -1,106 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Product Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A responsive accessory product gallery demonstrating CSS Grid, Flexbox and progressive enhancement.">
+  <meta name="theme-color" content="#10121a">
+  <title>Accessory Edit | Responsive Product Gallery</title>
+  <link rel="stylesheet" href="styles.css"><script src="gallery.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Accessory Store</h1>
-        <p>Quality accessories for every occasion</p>
-    </header>
-    
-    <main>
-        <section class="gallery-container">
-            <h2>Our Products</h2>
-            <div class="product-gallery">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <img src="pic1.jpg"alt="Stylish Watch">
-                    <div class="product-info">
-                        <h3>Stylish Watch</h3>
-                        <p class="price">$49.99</p>
-                        <p class="description">Elegant timepiece with leather strap and water resistance.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <img src="pic2.jpg" alt="Designer Sunglasses">
-                    <div class="product-info">
-                        <h3>Designer Sunglasses</h3>
-                        <p class="price">$39.99</p>
-                        <p class="description">UV protection sunglasses with polarized lenses.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <img src="pic3.jpg" alt="Leather Handbag">
-                    <div class="product-info">
-                        <h3>Leather Handbag</h3>
-                        <p class="price">$89.99</p>
-                        <p class="description">Genuine leather handbag with multiple compartments.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <img src="pic4.jpg" alt="Silver Necklace">
-                    <div class="product-info">
-                        <h3>Silver Necklace</h3>
-                        <p class="price">$29.99</p>
-                        <p class="description">Sterling silver necklace with pendant.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <img src="pic5.jpg" alt="Gold Bracelet">
-                    <div class="product-info">
-                        <h3>Gold Bracelet</h3>
-                        <p class="price">$59.99</p>
-                        <p class="description">18k gold plated bracelet with adjustable clasp.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <img src="pic6.jpg" alt="Leather Wallet">
-                    <div class="product-info">
-                        <h3>Leather Wallet</h3>
-                        <p class="price">$34.99</p>
-                        <p class="description">Genuine leather wallet with RFID protection.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <img src="pic7.jpg" alt="Diamond Earrings">
-                    <div class="product-info">
-                        <h3>Diamond Earrings</h3>
-                        <p class="price">$129.99</p>
-                        <p class="description">Sparkling diamond stud earrings for special occasions.</p>
-                    </div>
-                </div>
-                
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <img src="pic8.jpg" alt="Silk Scarf">
-                    <div class="product-info">
-                        <h3>Silk Scarf</h3>
-                        <p class="price">$24.99</p>
-                        <p class="description">Luxurious silk scarf with vibrant patterns.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Accessory Store. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+  <a class="skip" href="#main">Skip to catalogue</a>
+  <header><div class="shell nav"><a class="brand" href="#main">ACCESSORY<span> / EDIT</span></a><a href="#catalogue">Explore collection</a></div></header>
+  <main class="shell" id="main">
+    <section class="hero" aria-labelledby="title"><div><p class="eyebrow">WEB EXPERIMENT 02 / THE COLLECTION</p><h1 id="title">Details make<br><span>the difference.</span></h1><p>A curated gallery of everyday accessories and statement pieces. Explore eight sample products in this responsive design experiment.</p><a class="button" href="#catalogue">Browse the edit</a></div><div class="hero-art" aria-hidden="true"><span>08</span><small>CURATED PIECES</small></div></section>
+    <section id="catalogue" aria-labelledby="catalogue-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / DISCOVER</p><h2 id="catalogue-title">The collection</h2></div><p>Sample prices · USD</p></div>
+      <div class="filters" id="filters" hidden>
+        <label for="search">Search<input id="search" type="search" placeholder="Search accessories"></label>
+        <label for="category">Category<select id="category"><option value="All">All categories</option><option>Accessories</option><option>Bags &amp; wallets</option><option>Jewellery</option></select></label>
+        <label for="sort">Sort<select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
+        <button id="reset" type="button">Reset filters</button>
+      </div>
+      <p id="result-count" role="status">8 products</p>
+      <div class="product-gallery" id="gallery">
+      <article class="product-card" data-category="Accessories" data-price="4999" data-name="Stylish Watch">
+        <div class="image-frame"><img src="pic1.jpg" alt="Stylish Watch" decoding="async"></div>
+        <div class="product-info"><p class="category">Accessories</p><h3>Stylish Watch</h3><p class="description">Elegant timepiece with a leather strap.</p><p class="price">$49.99</p></div>
+      </article>
+      <article class="product-card" data-category="Accessories" data-price="3999" data-name="Designer Sunglasses">
+        <div class="image-frame"><img src="pic2.jpg" alt="Designer Sunglasses" decoding="async"></div>
+        <div class="product-info"><p class="category">Accessories</p><h3>Designer Sunglasses</h3><p class="description">Classic sunglasses with a polarized-lens design.</p><p class="price">$39.99</p></div>
+      </article>
+      <article class="product-card" data-category="Bags &amp; wallets" data-price="8999" data-name="Leather Handbag">
+        <div class="image-frame"><img src="pic3.jpg" alt="Leather Handbag" decoding="async"></div>
+        <div class="product-info"><p class="category">Bags &amp; wallets</p><h3>Leather Handbag</h3><p class="description">Handbag with multiple compartments.</p><p class="price">$89.99</p></div>
+      </article>
+      <article class="product-card" data-category="Jewellery" data-price="2999" data-name="Silver Necklace">
+        <div class="image-frame"><img src="pic4.jpg" alt="Silver Necklace" decoding="async"></div>
+        <div class="product-info"><p class="category">Jewellery</p><h3>Silver Necklace</h3><p class="description">Silver-tone necklace with pendant.</p><p class="price">$29.99</p></div>
+      </article>
+      <article class="product-card" data-category="Jewellery" data-price="5999" data-name="Gold Bracelet">
+        <div class="image-frame"><img src="pic5.jpg" alt="Gold Bracelet" loading="lazy" decoding="async"></div>
+        <div class="product-info"><p class="category">Jewellery</p><h3>Gold Bracelet</h3><p class="description">Gold-tone bracelet with adjustable clasp.</p><p class="price">$59.99</p></div>
+      </article>
+      <article class="product-card" data-category="Bags &amp; wallets" data-price="3499" data-name="Leather Wallet">
+        <div class="image-frame"><img src="pic6.jpg" alt="Leather Wallet" loading="lazy" decoding="async"></div>
+        <div class="product-info"><p class="category">Bags &amp; wallets</p><h3>Leather Wallet</h3><p class="description">Compact wallet with card compartments.</p><p class="price">$34.99</p></div>
+      </article>
+      <article class="product-card" data-category="Jewellery" data-price="12999" data-name="Diamond Earrings">
+        <div class="image-frame"><img src="pic7.jpg" alt="Diamond Earrings" loading="lazy" decoding="async"></div>
+        <div class="product-info"><p class="category">Jewellery</p><h3>Diamond Earrings</h3><p class="description">Sparkling stud earrings for special occasions.</p><p class="price">$129.99</p></div>
+      </article>
+      <article class="product-card" data-category="Accessories" data-price="2499" data-name="Silk Scarf">
+        <div class="image-frame"><img src="pic8.jpg" alt="Silk Scarf" loading="lazy" decoding="async"></div>
+        <div class="product-info"><p class="category">Accessories</p><h3>Silk Scarf</h3><p class="description">Patterned scarf for everyday styling.</p><p class="price">$24.99</p></div>
+      </article>
+      </div>
+      <p id="empty" class="empty" hidden>No products match these filters. Try another search or reset the filters.</p>
+    </section>
+  </main>
+  <footer><div class="shell footer-row"><p>Accessory Edit · Academic product-gallery prototype. No purchases or payments.</p><a href="https://github.com/void-tech-shiv/Exprement-2">View source</a></div></footer>
+</body></html>
